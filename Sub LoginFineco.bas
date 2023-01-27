@@ -27,6 +27,13 @@ Public strPass As String                            ' Contiene la Password passa
     '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     '+                                                                +
     '+ Procedura di Login automatico sul sito di Banca Fineco.        +
+    '+ Per funzionare necessita:                                      +
+    '+                                                                +
+    '+ - Che sia installato e funzionante il Selenium Driver, nel mio +
+    '+ caso per Edge. Seguire le guide su Google.                     +
+    '+                                                                +
+    '+ - Una volta installato, deve essere attivato nel file di Excel +
+    '+ il riferimento alla Selenium Type Library.                     +
     '+                                                                +
     '+ È necessaria la Funzione EsisteURL(ByVal strTestURL As String) +
     '+ per testare il collegamento prima del suo uso.                 +

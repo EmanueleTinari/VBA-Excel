@@ -1,4 +1,6 @@
 
+Option Explicit
+
 '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 '+                                                                          +
 '+ Funzione per valutare se un dato foglio esiste nel file aperto di Excel. +

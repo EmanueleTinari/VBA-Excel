@@ -1,4 +1,6 @@
 
+Option Explicit
+
 '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 '+                                                                                +
 '+ Funzione per valutare se un dato URL esiste.                                   +

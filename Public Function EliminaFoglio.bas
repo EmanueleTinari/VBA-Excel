@@ -1,4 +1,6 @@
 
+Option Explicit
+
 '+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 '+                                                                               +
 '+ Funzione per eliminare un foglio nel file aperto di Excel.                    +

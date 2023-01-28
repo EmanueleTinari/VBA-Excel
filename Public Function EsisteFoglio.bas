@@ -14,11 +14,11 @@ Option Explicit
 '+                                                                          +
 '+ If EsisteFoglio("Pippo") = True Then                                     +
 '+                                                                          +
-'+      Codice da eseguire in caso la funzione restituisca Vero             +
+'+      Codice da eseguire in caso la Funzione restituisca Vero             +
 '+                                                                          +
 '+ End If                                                                   +
 '+                                                                          +
-'+ Argomenti della funzione:                                                +
+'+ Argomenti della Funzione:                                                +
 '+                                                                          +
 '+ strNomeFoglio   -   Il nome del foglio da testare.                       +
 '+                                                                          +
@@ -49,7 +49,7 @@ Dim objWS As Object
     ' Prossimo Foglio in esame.
     Next objWS
 
-' Esce dalla funzione.
+' Esce dalla Funzione.
 Uscita: Exit Function
 ' Questa riga di uscita viene raggiunta in caso di errore.
 GesErr: MsgBox "Errore nella Function" & vbCrLf & "'EsisteFoglio'" & vbCrLf & vbCrLf & Err.Description
@@ -57,6 +57,7 @@ GesErr: MsgBox "Errore nella Function" & vbCrLf & "'EsisteFoglio'" & vbCrLf & vb
         objWS = Nothing
         strNomeFoglio = Empty
         Resume Uscita
-' Fine della funzione.
+' Fine della Funzione.
 End Function
+
   

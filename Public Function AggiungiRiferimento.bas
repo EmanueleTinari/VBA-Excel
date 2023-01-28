@@ -5,7 +5,7 @@ Option Explicit
 '+ Funzione che aggiunge al progetto di Excel indicato nella variabile wbk      +
 '+ un riferimento alla libreria la cui GUID è nella variabile strGUID.          +
 '+                                                                              +
-'+ Argomenti della funzione:                                                    +
+'+ Argomenti della Funzione:                                                    +
 '+                                                                              +
 '+ wbk                  -   Questo file o un altro a cui si vuole aggiungere.   +
 '+ strGUID              -   La GUID del riferimento da aggiungere.              +
@@ -20,13 +20,13 @@ Public Function AggiungiRiferimento(ByVal wbk As Workbook, ByVal strGUID As Stri
 ' Gestione errore.
 On Error GoTo GesErr
 
-    ' Se il controllo tramite la funzione EsisteRiferimento è FALSO (il riferiemento non esiste nel progetto), allora.
+    ' Se il controllo tramite la Funzione EsisteRiferimento è FALSO (il riferiemento non esiste nel progetto), allora.
     If EsisteRiferimento(wbk, strGUID) = False Then
         ' Aggiunge il riferimento al file tramite la GUID passata. ", 0, 0" Seleziona l'ultima versione installata sul computer.
         wbk.VBProject.References.AddFromGuid strGUID, 0, 0
     End If
 
-' Esce dalla funzione.
+' Esce dalla Funzione.
 Uscita: Exit Function
 ' Questa riga di uscita viene raggiunta in caso di errore.
 GesErr: MsgBox "Errore nella Sub" & vbCrLf & "'AggiungiRiferimento'" & vbCrLf & vbCrLf & Err.Description
@@ -34,5 +34,5 @@ GesErr: MsgBox "Errore nella Sub" & vbCrLf & "'AggiungiRiferimento'" & vbCrLf & 
         Set wbk = Nothing
         strGUID = Empty
         Resume Uscita
-' Fine della funzione.
+' Fine della Funzione.
 End Function

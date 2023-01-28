@@ -6,7 +6,7 @@ Option Explicit
 '+ Funzione per valutare se in una certa data la Borsa Italiana è aperta o chiusa. +
 '+ Restituisce Vero o Falso.                                                       +
 '+                                                                                 +
-'+ Argomenti della funzione:                                                       +
+'+ Argomenti della Funzione:                                                       +
 '+                                                                                 +
 '+ dtData       -   La data che vogliamo valutare.                                 +
 '+                                                                                 +
@@ -43,7 +43,7 @@ Dim C As Range
                 ' Svuota le variabili.
                 Set C = Nothing
                 dtData = Empty
-                ' Esce dalla funzione.
+                ' Esce dalla Funzione.
                 Exit Function
             ' La borsa è chiusa per festività o fine settimana.
             ElseIf Range("" & C.Address(False, False) & "").Offset(0, 1).Text = "Chiuso" Then
@@ -52,13 +52,13 @@ Dim C As Range
                 ' Svuota le variabili.
                 Set C = Nothing
                 dtData = Empty
-                ' Esce dalla funzione.
+                ' Esce dalla Funzione.
                 Exit Function
             End If
         End If
     End With
 
-' Esce dalla funzione.
+' Esce dalla Funzione.
 Uscita: Exit Function
 ' Questa riga di uscita viene raggiunta in caso di errore.
 GesErr: MsgBox "Errore nella Function" & vbCrLf & "'BorsaAperta'" & vbCrLf & vbCrLf & Err.Description
@@ -66,5 +66,5 @@ GesErr: MsgBox "Errore nella Function" & vbCrLf & "'BorsaAperta'" & vbCrLf & vbC
         Set C = Nothing
         dtData = Empty
         Resume Uscita
-' Fine della funzione.
+' Fine della Funzione.
 End Function

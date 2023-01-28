@@ -5,15 +5,16 @@ Option Explicit
 '+ Funzione che elimina dal progetto di Excel indicato nella variabile wbk      +
 '+ il riferimento alla libreria la cui GUID è nella variabile strGUID.          +
 '+                                                                              +
-'+ Argomenti della funzione:                                                    +
+'+ Argomenti della Funzione:                                                    +
 '+                                                                              +
 '+ wbk                  -   Questo file o un altro a cui si vuole eliminare.    +
 '+ strGUID              -   La GUID del riferimento da aggiungere.              +
 '+                                                                              +
-'+ È necessaria la Funzione EsisteRiferimento(wbk, strGUID) per testare se      +
-'+ un foglio con un dato nome esiste, per evitare errori in caso non esistesse. +
-'+                                                                              +
-'++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+'+ È necessaria la Funzione EsisteRiferimento(wbk, strGUID) per testare se il  +
+'+ riferimento, la cui GUID è passata tramite la stringa, esiste nel progetto, +
+'+ per evitare errori in caso non esistesse.                                   +
+'+                                                                             +
+'+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Public Function EliminaRiferimento(wbk As Workbook, strGUID As String)
 
@@ -26,7 +27,7 @@ On Error GoTo GesErr
         wbk.VBProject.References.Remove
     End If
 
-' Esce dalla sub.
+' Esce dalla Funzione.
 Uscita: Exit Function
 ' Questa riga di uscita viene raggiunta in caso di errore.
 GesErr: MsgBox "Errore nella Sub" & vbCrLf & "'EliminaRiferimento'" & vbCrLf & vbCrLf & Err.Description
@@ -34,5 +35,5 @@ GesErr: MsgBox "Errore nella Sub" & vbCrLf & "'EliminaRiferimento'" & vbCrLf & v
         Set wbk = Nothing
         strGUID = Empty
         Resume Uscita
-' Fine della funzione.
+' Fine della Funzione.
 End Function

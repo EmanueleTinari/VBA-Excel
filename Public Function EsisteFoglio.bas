@@ -59,5 +59,3 @@ GesErr: MsgBox "Errore nella Function" & vbCrLf & "'EsisteFoglio'" & vbCrLf & vb
         Resume Uscita
 ' Fine della Funzione.
 End Function
-
-  

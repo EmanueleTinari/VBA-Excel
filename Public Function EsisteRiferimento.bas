@@ -5,7 +5,7 @@ Option Explicit
 '+ Funzione per valutare se un dato riferimento esiste nel progetto di Excel.   +
 '+ Restituisce Vero o Falso.                                                    +
 '+                                                                              +
-'+ Argomenti della funzione:                                                    +
+'+ Argomenti della Funzione:                                                    +
 '+                                                                              +
 '+ wbk                  -   Questo file o un altro di cui si vuole controllare. +
 '+ strGUID              -   La GUID del riferimento da testare.                 +
@@ -24,7 +24,7 @@ Dim varRiferimento As Variant
     EsisteRiferimento = False
     ' Cicla tutti i riferimenti presenti nel file.
     For Each varRiferimento In wbk.VBProject.References
-        ' Se il GUID del riferimento in esame è uguale a quello passato alla funzione, allora.
+        ' Se il GUID del riferimento in esame è uguale a quello passato alla Funzione, allora.
         If varRiferimento.GUID = strGUID Then
             ' Imposta su True il risultato della Funzione.
             EsisteRiferimento = True
@@ -37,7 +37,7 @@ Dim varRiferimento As Variant
     ' Prossimo riferimento in esame.
     Next varRiferimento
 
-' Esce dalla funzione.
+' Esce dalla Funzione.
 Uscita: Exit Function
 ' Questa riga di uscita viene raggiunta in caso di errore.
 GesErr: MsgBox "Errore nella Function" & vbCrLf & "'EsisteRiferimento'" & vbCrLf & vbCrLf & Err.Description
@@ -45,5 +45,5 @@ GesErr: MsgBox "Errore nella Function" & vbCrLf & "'EsisteRiferimento'" & vbCrLf
         Set varRiferimento = Nothing
         strGUID = Empty
         Resume Uscita
-' Fine della funzione.
+' Fine della Funzione.
 End Function

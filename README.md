@@ -16,6 +16,13 @@
                                           -   Public Function PercorsoCompletoFile.bas
                                           -   Sub LoginFineco.bas
                                           -   Cartella Calendario di borsa.xlsx
+              Cartella SQLite
+                                    File:
+                                          -
+                                          -
+                                          -
+                                          -
+                                          -
               Cartella Utilità
                                     File:              
                                           -   Public Function AggiungiRiferimento.bas
@@ -25,10 +32,3 @@
                                           -   Public Function EsisteRiferimento.bas
                                           -   Public Sub ControlloRiferimenti.bas
                                           -   Public Sub DebugPrintRiferimentiEsistenti.bas
-              Cartella SQLite
-                                    File:
-                                          -
-                                          -
-                                          -
-                                          -
-                                          -

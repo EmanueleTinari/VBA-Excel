@@ -15,6 +15,7 @@ Private Sub Workbook_Open()
     '+++++++++++++++++++++++++
     '+ Esegue la Subroutine. +
     '+++++++++++++++++++++++++
+
     Call ControlloRiferimenti
-    
+
 End Sub

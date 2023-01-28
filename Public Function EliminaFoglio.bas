@@ -7,7 +7,7 @@ Option Explicit
 '+ Elimina il foglio il cui nome è passato dalla variabile stringa strNomeFoglio +
 '+ e restituisce Vero o Falso.                                                   +
 '+                                                                               +
-'+ Argomenti della funzione:                                                     +
+'+ Argomenti della Funzione:                                                     +
 '+                                                                               +
 '+ strNomeFoglio   -   Il nome del foglio da eliminare.                          +
 '+                                                                               +
@@ -23,7 +23,7 @@ On Error GoTo GesErr
 
     ' Inizialmente viene impostato su False il risultato della Funzione.
     EliminaFoglio = False
-    ' Se il risultato della funzione EsisteFoglio è True, ovvero se esiste un foglio col nome passato dalla stringa strNomeFoglio, allora.
+    ' Se il risultato della Funzione EsisteFoglio è True, ovvero se esiste un foglio col nome passato dalla stringa strNomeFoglio, allora.
     If EsisteFoglio(strNomeFoglio) = True Then
         ' Disattivo gli avvisi di Excel.
         Application.DisplayAlerts = False
@@ -39,12 +39,12 @@ On Error GoTo GesErr
         Exit Function
     End If
 
-' Esce dalla funzione.
+' Esce dalla Funzione.
 Uscita: Exit Function
 ' Questa riga di uscita viene raggiunta in caso di errore.
 GesErr: MsgBox "Errore nella Function" & vbCrLf & "'EliminaFoglio'" & vbCrLf & vbCrLf & Err.Description
         ' Svuota la variabile.
         strNomeFoglio = Empty
         Resume Uscita
-' Fine della funzione.
+' Fine della Funzione.
 End Function

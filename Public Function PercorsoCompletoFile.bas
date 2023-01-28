@@ -1,18 +1,20 @@
 
+Option Explicit
+
 '+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 '+                                                                             +
 '+ Funzione per aprire una finestra di dialogo e selezionare                   +
-'+ un file il cui percorso commpleto è il risultato della funzione.            +
+'+ un file il cui percorso commpleto è il risultato della Funzione.            +
 '+ Per funzionare necessita un riferimento a Microsoft Office 11.0 Object      +
 '+ Library o versione successiva.                                              +
 '+                                                                             +
 '+ È possibile variare il filtro dei file, il titolo della finestra e altro.   +
 '+                                                                             +
-'+ Argomenti della funzione:                                                   +
+'+ Argomenti della Funzione:                                                   +
 '+                                                                             +
 '+ = =                                                                         +
 '+                                                                             +
-'+ È necessaria la funzione PercorsoDesktop per recuperare il percorso         +
+'+ È necessaria la Funzione PercorsoDesktop per recuperare il percorso         +
 '+ del Desktop (può essere evitata, impostando la variabile in altro modo).    +
 '+                                                                             +
 '+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -27,7 +29,7 @@ Dim fd As Office.FileDialog
 ' Contiene il percorso completo del Desktop.
 Dim strPercorsoDesktop As String
 
-    ' Recupera il percorso del desktop utilizzando la specifica funzione.
+    ' Recupera il percorso del desktop utilizzando la specifica Funzione.
     strPercorsoDesktop = PercorsoDesktop
     ' Imposta la finestra di scelta file.
     Set fd = Application.FileDialog(msoFileDialogFilePicker)
@@ -48,12 +50,12 @@ Dim strPercorsoDesktop As String
         ' Ci si assicura che la visualizzazione dei file sia impostata su Dettagli.
         .InitialView = msoFileDialogViewDetails
         If .Show = True Then
-            ' La funzione restituisce il file selezionato.
+            ' La Funzione restituisce il file selezionato.
             PercorsoCompletoFile = .SelectedItems(1)
             ' Svuota le variabili.
             strPercorsoDesktop = Empty
             Set fd = Nothing
-            ' Esce dalla funzione.
+            ' Esce dalla Funzione.
             Exit Function
         Else
             ' Se nessun file è stato selezionato, avvisa.
@@ -61,12 +63,12 @@ Dim strPercorsoDesktop As String
             ' Svuota le variabili.
             strPercorsoDesktop = Empty
             Set fd = Nothing
-            ' Esce dalla funzione.
+            ' Esce dalla Funzione.
             Exit Function
         End If
     End With
 
-' Esce dalla funzione.
+' Esce dalla Funzione.
 Uscita: Exit Function
 ' Questa riga di uscita viene raggiunta in caso di errore.
 GesErr: MsgBox "Errore nella Function" & vbCrLf & "'PercorsoCompletoFile'" & vbCrLf & vbCrLf & Err.Description
@@ -74,5 +76,5 @@ GesErr: MsgBox "Errore nella Function" & vbCrLf & "'PercorsoCompletoFile'" & vbC
         strPercorsoDesktop = Empty
         Set fd = Nothing
         Resume Uscita
-' Fine della funzione.
+' Fine della Funzione.
 End Function

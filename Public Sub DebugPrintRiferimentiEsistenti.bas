@@ -1,4 +1,6 @@
 
+Option Explicit
+
 '++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 '+                                                      +
 '+ Routine che stampa nella Finestra Immediata          +
@@ -41,3 +43,4 @@ Dim intI As Integer
     End With
 ' Fine della Subroutine.
 End Sub
+

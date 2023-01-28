@@ -1,13 +1,13 @@
-# VBA-Excel
-Alcune Subroutine e Funzioni in VBA che ho sviluppato negli anni.
+# $$\textcolor{LightGreen}{\text{VBA - Excel}}$$
 
-Credo di aver commentato oltre l'80% di linee di codice molte delle quali, per alcune ovvietà, inutilmente.
-Ho tuttavia scelto di farlo in italiano.
-Se qualcuno fosse interessato alla sua traduzione, usi Google Translator nel caso, o mi chieda.
+### Alcune Subroutine e Funzioni in VBA che ho sviluppato negli anni.<br/>
+### Credo di aver commentato oltre l'80% di linee di codice molte delle quali, per alcune ovvietà, inutilmente.<br/>
+### Ho tuttavia scelto di farlo in italiano.<br/>
+### Se qualcuno fosse interessato alla sua traduzione, usi Google Translator nel caso, o mi chieda. ###
 
 (ENG: Many part of code is commented, but I decided to do it in my language: Italiano! If interested, You can use Google Translator or ask me! Tnx)
 
-Nel Repo VBA-Excel:
+### $$\textcolor{Red}{\text{Nel Repo VBA-Excel:}}$$ ###
 
               Cartella Banca Fineco
                                     File:

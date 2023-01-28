@@ -38,7 +38,7 @@ Public strPass As String                            ' Contiene la Password passa
     '+ È necessaria la Funzione EsisteURL(ByVal strTestURL As String) +
     '+ per testare il collegamento prima del suo uso.                 +
     '+                                                                +
-    '+ Uso: nel codice, quando serve, inserire la chiamata alla sub:  +
+    '+ Uso: nel codice, quando serve, inserire la chiamata alla Sub:  +
     '+                                                                +
     '+ Call LoginFineco                                               +
     '+                                                                +
@@ -47,6 +47,7 @@ Public strPass As String                            ' Contiene la Password passa
 Sub LoginFineco()
     ' Controllo degli errori
     On Error Resume Next
+    ' Se il controllo dell'indirizzo tramite la Funzione EsisteURL dà risultato positivo (l'indirizzo esiste), allora.
     If EsisteURL(strURLlogin) = True Then
         ' Le seguenti operazioni vengono effettuate sull'oggetto pubblico contenente il Selenium Driver.
         With eDriver
@@ -75,7 +76,7 @@ Sub LoginFineco()
             ' Se è presente l'elemento Input per l'inserimento dell'Utente allora.
             If eDriver.IsElementPresent(sBy.XPath("//input[@id='user']")) Then
                 ' Pone nella variabile il valore richiesto con la InputBox.
-                strUtente = InputBox("Inserisci il tuo Codice Utente", "User", "<---Inserisci tra queste due virgolette, eliminando tutta questa scritta, il tuo codice utente se vuoi che ti venga proposto in automatico !--->")
+                strUtente = InputBox("Inserisci il tuo Codice Utente", "User", "53177094")
                 ' Lo preme.
                 .FindElementByXPath("//input[@id='user']").Click
                 ' Invia la variabile contenente l'Utente.
@@ -86,7 +87,7 @@ Sub LoginFineco()
             ' Se è presente l'elemento Input per l'inserimento della Pw allora.
             If eDriver.IsElementPresent(sBy.XPath("//input[@id='password']")) Then
                 ' Pone nella variabile il valore richiesto con la InputBox.
-                strPass = InputBox("Inserisci la tua Password", "Password", "<---Qui la tua PW, se vuoi esca in automatico nella InputBox !--->")
+                strPass = InputBox("Inserisci la tua Password", "Password")
                 ' Lo preme.
                 .FindElementByXPath("//input[@id='password']").Click
                 ' Invia la variabile contenente la Pw.
@@ -100,12 +101,16 @@ Sub LoginFineco()
                 .FindElementByXPath("//input[@type='submit']").Click
             End If
         End With
-    Else
+    ' Altrimenti se il controllo dell'indirizzo tramite la Funzione EsisteURL dà risultato negativo (l'indirizzo non esiste o ci sono problemi), allora.
+    ElseIf EsisteURL(strURLlogin) = False Then
+        ' Avvisa l'utente ed esce dalla Sub.
         If MsgBox("L'indirizzo della Home page del sito Fineco non è stato raggiunto dalla richiesta", vbCritical + vbOKOnly, "A T T E N Z I O N E !") = vbOK Then
+            ' Esce dalla Sub.
             Exit Sub
         End If
     End If
     ' Svuota le variabili pubbliche.
     strUtente = ""
     strPass = ""
+' Fine della Sub.
 End Sub

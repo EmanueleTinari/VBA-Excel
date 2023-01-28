@@ -8,18 +8,18 @@ Option Explicit
 '+ Restituisce Vero o Falso.                                                      +
 '+                                                                                +
 '+ Uso: Prima di tentare il collegamento ad una fagina internet, si può far       +
-'+ eseguire alla funzione un controllo per vedere se l'indirizzo è raggiungibile  +
+'+ eseguire alla Funzione un controllo per vedere se l'indirizzo è raggiungibile  +
 '+ oppure no eseguendo un IF...THEN...END IF                                      +
 '+                                                                                +
 '+ Esempio con Google all'indirizzo internet https://www.google.com/              +
 '+                                                                                +
 '+ If EsisteURL("https://www.google.com/") = True Then                            +
 '+                                                                                +
-'+      Codice da eseguire in caso la funzione restituisca Vero                   +
+'+      Codice da eseguire in caso la Funzione restituisca Vero                   +
 '+                                                                                +
 '+ End If                                                                         +
 '+                                                                                +
-'+ Argomenti della funzione:                                                      +
+'+ Argomenti della Funzione:                                                      +
 '+                                                                                +
 '+ strTestURL   -   l'URL (indirizzo Internet) della pagina che vogliamo testare. +
 '+                                                                                +
@@ -51,21 +51,21 @@ Dim rc As Variant
         Set Request = Nothing
         Set rc = Nothing
         strTestURL = Empty
-        ' Esce dalla funzione.
+        ' Esce dalla Funzione.
         Exit Function
     ' Se la risposta è differente da "OK" allora.
     ElseIf rc <> "OK" Then
-        ' Lascia invariato il valore della funzione.
+        ' Lascia invariato il valore della Funzione.
         EsisteURL = False
         ' Svuota le variabili.
         Set Request = Nothing
         Set rc = Nothing
         strTestURL = Empty
-        ' Esce dalla funzione.
+        ' Esce dalla Funzione.
         Exit Function
     End If
 
-' Esce dalla funzione.
+' Esce dalla Funzione.
 Uscita: Exit Function
 ' Questa riga di uscita viene raggiunta in caso di errore.
 GesErr: MsgBox "Errore nella Function" & vbCrLf & "'EsisteURL'" & vbCrLf & vbCrLf & Err.Description
@@ -74,5 +74,5 @@ GesErr: MsgBox "Errore nella Function" & vbCrLf & "'EsisteURL'" & vbCrLf & vbCrL
         Set rc = Nothing
         strTestURL = Empty
         Resume Uscita
-' Fine della funzione.
+' Fine della Funzione.
 End Function

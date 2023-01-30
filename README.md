@@ -7,7 +7,7 @@
 
 (ENG: Many part of code is commented, but I decided to do it in my language: Italiano! If interested, You can use Google Translator or ask me! Tnx)
 
-### $$\textcolor{Red}{\text{Nel Repo VBA-Excel:}}$$ ###
+# $$\textcolor{Red}{\text{Nel Repo VBA-Excel:}}$$ ###
 
               Cartella Banca Fineco
                                     File:

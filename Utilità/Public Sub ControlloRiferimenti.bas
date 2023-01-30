@@ -15,12 +15,12 @@ Option Explicit
 '+                                                      +
 '++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Private Sub ControlloRiferimenti()
+Public Sub ControlloRiferimenti()
 
 ' Gestione errore.
 On Error GoTo GesErr
-
-Dim strArrayRiferimenti(14, 2) As String        ' Array dei riferimenti. Variare il primo numero se i riferimenti variano.
+        
+Dim strArrayRiferimenti(14, 0) As String        ' Array dei riferimenti. Variare il numero se i riferimenti variano ATTENZIONE, parte da 0
 Dim intCiclo1 As Integer                        ' Variabile per il primo ciclo.
 Dim objRiferimento As Object                    ' Oggetto che punta al riferimento.
 Dim wbk As Workbook                             ' Riferimento al Workbook.
@@ -36,78 +36,63 @@ Dim intCiclo2 As Integer                        ' Variabile per il secondo ciclo
     
 '**************************************************************************
 '* Attenzione! Aumentando o diminuendo i riferimenti, aumentano o         *
-'* diminuiscono i blocchi di codice che riempiono l'array tridimensionale *
+'* diminuiscono i blocchi di codice che riempiono l'array                 *
 '**************************************************************************
     
-    ' Riferimento 0.
-    strArrayRiferimenti(0, 0) = "Visual Basic For Applications"
-    strArrayRiferimenti(0, 1) = "{000204EF-0000-0000-C000-000000000046}"
-    strArrayRiferimenti(0, 2) = "VBA"
-    ' Riferimento 1.
-    strArrayRiferimenti(1, 0) = "Microsoft Excel 16.0 Object Library"
-    strArrayRiferimenti(1, 1) = "{00020813-0000-0000-C000-000000000046}"
-    strArrayRiferimenti(1, 2) = "Excel"
-    ' Riferimento 2.
-    strArrayRiferimenti(2, 0) = "OLE Automation"
-    strArrayRiferimenti(2, 1) = "{00020430-0000-0000-C000-000000000046}"
-    strArrayRiferimenti(2, 2) = "stdole"
-    ' Riferimento 3.
-    strArrayRiferimenti(3, 0) = "Microsoft Office 16.0 Object Library"
-    strArrayRiferimenti(3, 1) = "{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}"
-    strArrayRiferimenti(3, 2) = "Office"
-    ' Riferimento 4.
-    strArrayRiferimenti(4, 0) = "Microsoft Forms 2.0 Object Library"
-    strArrayRiferimenti(4, 1) = "{0D452EE1-E08F-101A-852E-02608C4D0BB4}"
-    strArrayRiferimenti(4, 2) = "MSForms"
-    ' Riferimento 5.
-    strArrayRiferimenti(5, 0) = "Microsoft XML, v6.0"
-    strArrayRiferimenti(5, 1) = "{F5078F18-C551-11D3-89B9-0000F81FE221}"
-    strArrayRiferimenti(5, 2) = "MSXML2"
-    ' Riferimento 6.
-    strArrayRiferimenti(6, 0) = "Microsoft HTML Object Library"
-    strArrayRiferimenti(6, 1) = "{3050F1C5-98B5-11CF-BB82-00AA00BDCE0B}"
-    strArrayRiferimenti(6, 2) = "MSHTML"
-    ' Riferimento 7.
-    strArrayRiferimenti(7, 0) = "Microsoft Internet Controls"
-    strArrayRiferimenti(7, 1) = "{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}"
-    strArrayRiferimenti(7, 2) = "SHDocVw"
-    ' Riferimento 8.
-    strArrayRiferimenti(8, 0) = "Microsoft Scripting Runtime"
-    strArrayRiferimenti(8, 1) = "{420B2830-E718-11CF-893D-00A0C9054228}"
-    strArrayRiferimenti(8, 2) = "Scripting"
-    ' Riferimento 9.
-    strArrayRiferimenti(9, 0) = "Microsoft Script Control 1.0"
-    strArrayRiferimenti(9, 1) = "{0E59F1D2-1FBE-11D0-8FF2-00A0D10038BC}"
-    strArrayRiferimenti(9, 2) = "MSScriptControl"
-    ' Riferimento 10.
-    strArrayRiferimenti(10, 0) = "Microsoft ActiveX Data Objects 6.1 Library"
-    strArrayRiferimenti(10, 1) = "{B691E011-1797-432E-907A-4D8C69339129}"
-    strArrayRiferimenti(10, 2) = "ADODB"
-    ' Riferimento 11.
-    strArrayRiferimenti(11, 0) = "Microsoft Windows Common Controls 6.0 (SP6)"
-    strArrayRiferimenti(11, 1) = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}"
-    strArrayRiferimenti(11, 2) = "MSComctlLib"
-    ' Riferimento 12.
-    strArrayRiferimenti(12, 0) = "Selenium Type Library"
-    strArrayRiferimenti(12, 1) = "{0277FC34-FD1B-4616-BB19-A9AABCAF2A70}"
-    strArrayRiferimenti(12, 2) = "Selenium"
-    ' Riferimento 13.
-    strArrayRiferimenti(13, 0) = "Microsoft Visual Basic for Applications Extensibility 5.3"
-    strArrayRiferimenti(13, 1) = "{0002E157-0000-0000-C000-000000000046}"
-    strArrayRiferimenti(13, 2) = "VBIDE"
-    ' Riferimento 14.
-    strArrayRiferimenti(14, 0) = "Microsoft WMI Scripting V1.2 Library"
-    strArrayRiferimenti(14, 1) = "{565783C6-CB41-11D1-8B02-00600806D9B6}"
-    strArrayRiferimenti(14, 2) = "WbemScripting"
+    ' Riferimento 0 Visual Basic For Applications, VBA
+    strArrayRiferimenti(0, 0) = "{000204EF-0000-0000-C000-000000000046}"
+    
+    ' Riferimento 1 Microsoft Excel 16.0 Object Library, Excel
+    strArrayRiferimenti(1, 0) = "{00020813-0000-0000-C000-000000000046}"
+    
+    ' Riferimento 2 OLE Automation, stdole
+    strArrayRiferimenti(2, 0) = "{00020430-0000-0000-C000-000000000046}"
+
+    ' Riferimento 3 Microsoft Office 16.0 Object Library, Office
+    strArrayRiferimenti(3, 0) = "{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}"
+
+    ' Riferimento 4 Microsoft Forms 2.0 Object Library, MSForms
+    strArrayRiferimenti(4, 0) = "{0D452EE1-E08F-101A-852E-02608C4D0BB4}"
+
+    ' Riferimento 5 Microsoft XML v6.0, MSXML2
+    strArrayRiferimenti(5, 0) = "{F5078F18-C551-11D3-89B9-0000F81FE221}"
+
+    ' Riferimento 6 Microsoft HTML Object Library, MSHTML
+    strArrayRiferimenti(6, 0) = "{3050F1C5-98B5-11CF-BB82-00AA00BDCE0B}"
+
+    ' Riferimento 7 Microsoft Internet Controls, SHDocVw
+    strArrayRiferimenti(7, 0) = "{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}"
+
+    ' Riferimento 8 Microsoft Scripting Runtime, Scripting
+    strArrayRiferimenti(8, 0) = "{420B2830-E718-11CF-893D-00A0C9054228}"
+
+    ' Riferimento 9 Microsoft Script Control 1.0, MSScriptControl
+    strArrayRiferimenti(9, 0) = "{0E59F1D2-1FBE-11D0-8FF2-00A0D10038BC}"
+
+    ' Riferimento 10 Microsoft ActiveX Data Objects 6.1 Library, ADODB
+    strArrayRiferimenti(10, 0) = "{B691E011-1797-432E-907A-4D8C69339129}"
+
+    ' Riferimento 11 Microsoft Windows Common Controls 6.0 (SP6), MSComctlLib
+    strArrayRiferimenti(11, 0) = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}"
+
+    ' Riferimento 12 Selenium Type Library, Selenium
+    strArrayRiferimenti(12, 0) = "{0277FC34-FD1B-4616-BB19-A9AABCAF2A70}"
+
+    ' Riferimento 13 Microsoft Visual Basic for Applications Extensibility 5.3, VBIDE
+    strArrayRiferimenti(13, 0) = "{0002E157-0000-0000-C000-000000000046}"
+
+    ' Riferimento 14 Microsoft WMI Scripting V1.2 Library, WbemScripting
+    strArrayRiferimenti(14, 0) = "{565783C6-CB41-11D1-8B02-00600806D9B6}"
     
     ' Imposta il riferimento a questo Workbook.
     Set wbk = ThisWorkbook
     With Application.ThisWorkbook.VBProject.References
-        For intCiclo1 = 0 To 13
+        ' ATTENZIONE ! Variando il numero dei riferimenti, in più o in meno, variare il numero di cicli For intCiclo1... qui sotto.
+        For intCiclo1 = 0 To 13     '<----- Partire da 0 a contare i riferimenti!
             For intCiclo2 = 1 To .Count
-                If .Item(intCiclo2).Description <> strArrayRiferimenti(intCiclo1, 0) Then
-                    AggiungiRiferimento wbk, strArrayRiferimenti(intCiclo1, 1), strArrayRiferimenti(intCiclo1, 2)
-                ElseIf .Item(intCiclo2).Description = strArrayRiferimenti(intCiclo1, 0) Then
+                If .Item(intCiclo2).GUID <> strArrayRiferimenti(intCiclo1, 0) Then
+                    AggiungiRiferimento wbk, strArrayRiferimenti(intCiclo1, 0)
+                ElseIf .Item(intCiclo2).GUID = strArrayRiferimenti(intCiclo1, 0) Then
                     Exit For
                 End If
             Next intCiclo2

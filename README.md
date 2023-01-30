@@ -32,3 +32,8 @@
                                           -   Public Function EsisteRiferimento.bas
                                           -   Public Sub ControlloRiferimenti.bas
                                           -   Public Sub DebugPrintRiferimentiEsistenti.bas
+
+
+
+Per qualsiasi suggerimento, domanda, richiesta... lasciate pure un msg qui o all'indirizzo mail di GitHub.<br/>
+Grazie in anticipo per la visita!

@@ -5,6 +5,8 @@ Option Explicit
 '+ Funzione per valutare se un dato riferimento esiste nel progetto di Excel.   +
 '+ Restituisce Vero o Falso.                                                    +
 '+                                                                              +
+'+ Il valore di Default della Funzione EsisteRiferimento è Falso.               +
+'+                                                                              +
 '+ Argomenti della Funzione:                                                    +
 '+                                                                              +
 '+ wbk                  -   Questo file o un altro di cui si vuole controllare. +

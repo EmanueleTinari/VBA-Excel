@@ -6,6 +6,8 @@ Option Explicit
 '+ Funzione per valutare se un dato foglio esiste nel file aperto di Excel. +
 '+ Restituisce Vero o Falso.                                                +
 '+                                                                          +
+'+ Il valore di Default della Funzione EsisteFoglio è Falso.                +
+'+                                                                          +
 '+ Uso: Prima di tentare di accedere, creare o cancellare un foglio nel     +
 '+ file di Excel, si può far eseguire un controllo col nome del foglio ed   +
 '+ eseguire un IF...THEN...END IF                                           +

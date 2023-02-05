@@ -6,6 +6,8 @@ Option Explicit
 '+ Funzione per valutare se in una certa data la Borsa Italiana è aperta o chiusa. +
 '+ Restituisce Vero o Falso.                                                       +
 '+                                                                                 +
+'+ Il valore di Default della Funzione BorsaAperta è Falso.                        +
+'+                                                                                 +
 '+ Argomenti della Funzione:                                                       +
 '+                                                                                 +
 '+ dtData       -   La data che vogliamo valutare.                                 +

@@ -7,6 +7,8 @@ Option Explicit
 '+ Elimina il foglio il cui nome è passato dalla variabile stringa strNomeFoglio +
 '+ e restituisce Vero o Falso.                                                   +
 '+                                                                               +
+'+ Il valore di Default della Funzione EliminaFoglio è Falso.                    +
+'+                                                                               +
 '+ Argomenti della Funzione:                                                     +
 '+                                                                               +
 '+ strNomeFoglio   -   Il nome del foglio da eliminare.                          +

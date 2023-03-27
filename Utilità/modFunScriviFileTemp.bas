@@ -4,7 +4,7 @@ Option Private Module
 ' x testare la Funzione ScriviFileTemp.
 Public Sub Prova_ScriviFileTemp()
     
-Dim strFileCreato As String
+Dim strFileCreato               As String
     ' Esempio in cui viene indicato solo la stringa di testo da inserire.
     ' Nella Var strFileCreato è contenuto il percorso completo e il nome del file creato.
     strFileCreato = ScriviFileTemp("Ciao")
@@ -23,7 +23,7 @@ End Sub
 '+                                                                                                +
 '+ In data :                 11/02/2023                                                           +
 '+                                                                                                +
-'+ Descrizione :             Funzione che crea in un dato percorso (o nella cartella temporanea)  +
+'+ Descrizione :             Funzione che crea in un dato percorso (o nella Cartella temporanea)  +
 '+                           un file con un nome passato (oppure viene creato basandosi sulla     +
 '+                           data ed ora di esecuzione) con l'estensione passata (oppure viene    +
 '+                           usata quella di default (txt), contenente la stringa strTesto.       +
@@ -45,7 +45,7 @@ End Sub
 '+                             La stringa di testo da scrivere nel file di testo.                 +
 '+                                                                                                +
 '+                           - Optional strPercorso As String                                     +
-'+                             Si può fornire un proprio percorso per la cartella di salvataggio. +
+'+                             Si può fornire un proprio percorso per la Cartella di salvataggio. +
 '+                                                                                                +
 '+                           - Optional ByVal strNomeFile As String                               +
 '+                             Si può fornire un proprio nome per il file creato.                 +
@@ -67,9 +67,9 @@ Public Function ScriviFileTemp(ByVal strTesto As String, _
 On Error GoTo GesErr
 
 ' La Var conterrà il percorso e il nome del file.
-Dim strPercorsoNomeFile As String
+Dim strPercorsoNomeFile         As String
 ' La Var conterrà il numero del file che stiamo andando a creare.
-Dim intNumFile As Integer
+Dim intNumFile                  As Integer
     
     ' Se la Var passata alla Funzione, contenente il nome del file, è vuota, allora.
     If strNomeFile = "" Then
@@ -78,7 +78,7 @@ Dim intNumFile As Integer
     End If
     ' Se la Var passata alla Funzione, contenente il percorso del file, è vuota, allora.
     If strPercorso = "" Then
-        ' Crea il percorso alla cartella temporanea.
+        ' Crea il percorso alla Cartella temporanea.
         strPercorso = Environ("TMP") & Application.PathSeparator
     End If
     ' Poi concatena le due stringe per ottenere il file.

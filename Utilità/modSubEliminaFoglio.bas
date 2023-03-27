@@ -10,13 +10,13 @@ Option Private Module
 '+                                                                                                +
 '+ In data :                 10/02/2023                                                           +
 '+                                                                                                +
-'+ Descrizione :             Sub che cancella il foglio il cui nome è passato dalla stringa       +
+'+ Descrizione :             Sub che cancella il Foglio il cui nome è passato dalla stringa       +
 '+                           strNomeFoglio.                                                       +
 '+                                                                                                +
-'+ Uso :                     Prima di procedere all'eliminazione del foglio, controlla tramite    +
+'+ Uso :                     Prima di procedere all'eliminazione del Foglio, controlla tramite    +
 '+                           la Function EsisteFoglio se questo esiste nel file attivo. Solo se   +
 '+                           la risposta alla chiamata alla Funzione è Vero procede alla          +
-'+                           cancellazione del foglio.                                            +
+'+                           cancellazione del Foglio.                                            +
 '+                                                                                                +
 '+ Valore restituito:        Nessuno                                                              +
 '+                                                                                                +
@@ -25,7 +25,7 @@ Option Private Module
 '+ Valore di default :       Nessuno                                                              +
 '+                                                                                                +
 '+ Argomento(i) :            - ByVal strNomeFoglio As String                                      +
-'+                             Il nome del foglio di Excel che si vuole cancellare.               +
+'+                             Il nome del Foglio di Excel che si vuole cancellare.               +
 '+                                                                                                +
 '+ Riferimento(i):           - Function EsisteFoglio(ByVal strNomeFoglio As String)               +
 '+                                                                                                +
@@ -36,7 +36,7 @@ Public Sub EliminaFoglio(ByVal strNomeFoglio As String)
 ' Gestione errore.
 On Error GoTo GesErr
 
-    ' Verifica che esista il foglio.
+    ' Verifica che esista il Foglio.
     If EsisteFoglio(strNomeFoglio) = True Then
         ' Disattiva l'aggiornamento dello schermo.
         Application.ScreenUpdating = False
@@ -44,7 +44,7 @@ On Error GoTo GesErr
         Application.Calculation = xlCalculationManual
         ' Disattiva gli avvisi di Excel.
         Application.DisplayAlerts = False
-        ' Cancella il foglio.
+        ' Cancella il Foglio.
         WorkSheets(strNomeFoglio).Delete
         ' Riattiva gli avvisi di Excel.
         Application.DisplayAlerts = True

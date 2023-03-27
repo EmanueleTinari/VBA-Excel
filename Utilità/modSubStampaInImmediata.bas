@@ -60,11 +60,11 @@ On Error GoTo GesErr
 
     ' Se la stringa passata alla Sub come Argomento è Vuota o Nulla, allora.
     If strDaStampareInImmediata = Empty Or Null Then
-        ' Invia alla finestra Immediata un avviso.
+        ' Invia alla Finestra Immediata un avviso.
         Debug.Print "La stringa passata come Argomento alla Var strDaStampareInImmediata è Vuota o Nulla."
         GoTo Uscita
     Else
-        ' Invia alla finestra Immediata la stringa.
+        ' Invia alla Finestra Immediata la stringa.
         Debug.Print "" & strDaStampareInImmediata
         GoTo Uscita
     End If

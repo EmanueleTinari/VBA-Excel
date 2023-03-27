@@ -6,13 +6,13 @@ Option Private Module
 Public Sub Prova_StampaRiferEsistenti()
 
 ' Variabile oggetto per il WorkBook.
-Dim wbk As Workbook
+Dim wbk                         As Workbook
 
     ' Esempio senza Argomenti (usa ThisWorkbook come wbk e invia il resoconto alla Finestra Immediata).
     StampaRiferEsistenti
-    ' Esempio con argomenti settati entrambi, stampa in un file txt nella cartella Temp.
+    ' Esempio con argomenti settati entrambi, stampa in un file txt nella Cartella Temp.
     Set wbk = Workbooks("PERSONAL.XLSB")
-    Call StampaRiferEsistenti(wbk, False)
+    Call StampaRiferEsistenti(wbk, True)
 
 End Sub
 
@@ -27,7 +27,7 @@ End Sub
 '+                                                                                                +
 '+ Descrizione :             Routine che compie un ciclo tra tutti i Riferimenti del file passato +
 '+                           dall'Argomento wbk e crea una stringa che si può scegliere di        +
-'+                           inviare ad un file di testo oppure alla finestra Immediata.          +
+'+                           inviare ad un file di testo oppure alla Finestra Immediata.          +
 '+                                                                                                +
 '+ Uso :                     Eseguire l'esempio, impostando manualmente il nome del file di       +
 '+                           Excel oppure utilizzando la finestra di dialogo scegli file.         +
@@ -42,7 +42,7 @@ End Sub
 '+                               Set wbk = Workbooks("FILE.XLSM") oppure ("FILE.XLSB")...         +
 '+                               ' Invia al file di testo.                                        +
 '+                               Call StampaRiferEsistenti(wbk, True)                             +
-'+                               ' Invia alla finestra Immediata.                                 +
+'+                               ' Invia alla Finestra Immediata.                                 +
 '+                               Call StampaRiferEsistenti(wbk, False)                            +
 '+                           End Sub                                                              +
 '+                                                                                                +
@@ -55,7 +55,7 @@ End Sub
 '+                                                                                                +
 '+                           - ByVal bolTxt As Boolean                                            +
 '+                             True. Crea un file di testo contenente la lista dei Riferimenti.   +
-'+                             False. Invia la lista alla finestra Immediata.                     +
+'+                             False. Invia la lista alla Finestra Immediata.                     +
 '+                                                                                                +
 '+ Riferimento(i):           - Function ScriviFileTemp(strTesto As String, _                      +
 '+                                                    Optional strPercorso As String, _           +
@@ -74,15 +74,20 @@ Public Sub StampaRiferEsistenti(Optional ByVal wbk As Workbook, Optional ByVal b
 On Error GoTo GesErr
 
 ' Serve per il ciclo tra tutti i Riferimenti.
-Dim intI As Integer
+Dim intI                        As Integer
 ' La Var conterrà la stringa che si andrà a creare.
-Dim strTesto As String
+Dim strTesto                    As String
     
-    ' Se la Var wbk passata come argomento della Function è Nothing, allora.
-    If wbk Is Nothing Then
-        ' Imposta nella Var Oggetto il ThisWorkbook.
-        Set wbk = Application.ThisWorkbook
+    ' Se l'Argomento wbk passato alla Sub è vuoto, allora.
+    If wbk Is Nothing Or Null Then
+        ' Imposta nella Var wbk il ThisWorkbook.
+        Set wbk = ThisWorkbook
+    ' Altrimenti.
+    Else
+        ' Imposto nella Var wbk il WorkBook passato come Argomento alla Sub.
+        Set wbk = wbk
     End If
+    
     ' Consideriamo solo di questo file di Excel tutti i suoi Riferimenti attivi.
     With wbk.VBProject.References
         ' Ciclo tra i Riferimenti.
@@ -92,7 +97,7 @@ Dim strTesto As String
             ' Inserisce il relativo nome.
             strTesto = strTesto & "Nome: " & .item(intI).Name & vbCrLf
             ' Inserisce la GUID.
-            strTesto = strTesto & "GUID: " & .item(intI).Guid & vbCrLf
+            strTesto = strTesto & "GUID: " & .item(intI).GUID & vbCrLf
             ' Inserisce la maggiore versione.
             strTesto = strTesto & "M: " & .item(intI).Major & vbCrLf
             ' Inserisce la minore versione.
@@ -123,7 +128,7 @@ Dim strTesto As String
         ScriviFileTemp (strTesto)
     ' Se invece è stato inviato alla Funzione Falso, allora.
     ElseIf bolTxt = False Then
-        ' Invia alla finestra Immediata la stringa strTesto.
+        ' Invia alla Finestra Immediata la stringa strTesto.
         StampaInImmediata (strTesto)
     End If
 

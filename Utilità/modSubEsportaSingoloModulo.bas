@@ -19,11 +19,11 @@ Dim intI                        As Integer
     strSerieModuli = strSerieModuli & "modFunEsisteModulo,"
     strSerieModuli = strSerieModuli & "modFunMesgBox,"
     strSerieModuli = strSerieModuli & "modFunScriviFileTemp,"
-    strSerieModuli = strSerieModuli & "modFunSelezionaCartella"
+    strSerieModuli = strSerieModuli & "modFunSelezionaCartella,"
 
     strSerieModuli = strSerieModuli & "modSubEliminaFoglio,"
     strSerieModuli = strSerieModuli & "modSubEsportaSingoloModulo,"
-    strSerieModuli = strSerieModuli & "modSubSalvataggioAlVolo,"
+    strSerieModuli = strSerieModuli & "modSubSalvaFileDiExcel,"
     strSerieModuli = strSerieModuli & "modSubStampaInImmediata,"
     strSerieModuli = strSerieModuli & "modSubStampaRiferEsistenti,"
     strSerieModuli = strSerieModuli & "modSubVerificaCartella,"

@@ -67,7 +67,7 @@ Uscita: Set objFSO = Nothing
         strPercorsoCartella = Empty
         Exit Sub
 ' Questa riga di uscita viene raggiunta in caso di errore.
-GesErr: MsgBox "Errore nella Function" & vbCrLf & "'VerificaCartella'" & vbCrLf & vbCrLf & "Errore Numero: " & Err.Number & vbCrLf & "Descrizione dell'errore:" & vbCrLf & Err.Description, vbCritical, "C'è stato un errore!"
+GesErr: MsgBox "Errore nella Sub" & vbCrLf & "'VerificaCartella'" & vbCrLf & vbCrLf & "Errore Numero: " & Err.Number & vbCrLf & "Descrizione dell'errore:" & vbCrLf & Err.Description, vbCritical, "C'è stato un errore!"
         Resume Uscita
 ' Fine della Sub.
 End Sub

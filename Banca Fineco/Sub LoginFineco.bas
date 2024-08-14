@@ -76,7 +76,7 @@ Sub LoginFineco()
             ' Se è presente l'elemento Input per l'inserimento dell'Utente allora.
             If eDriver.IsElementPresent(sBy.XPath("//input[@id='user']")) Then
                 ' Pone nella variabile il valore richiesto con la InputBox.
-                strUtente = InputBox("Inserisci il tuo Codice Utente", "User", "53177094")
+                strUtente = InputBox("Inserisci il tuo Codice Utente", "User", "xxxxxxxx")
                 ' Lo preme.
                 .FindElementByXPath("//input[@id='user']").Click
                 ' Invia la variabile contenente l'Utente.
@@ -87,7 +87,7 @@ Sub LoginFineco()
             ' Se è presente l'elemento Input per l'inserimento della Pw allora.
             If eDriver.IsElementPresent(sBy.XPath("//input[@id='password']")) Then
                 ' Pone nella variabile il valore richiesto con la InputBox.
-                strPass = InputBox("Inserisci la tua Password", "Password")
+                strPass = InputBox("Inserisci la tua Password", "xxxxxxxx")
                 ' Lo preme.
                 .FindElementByXPath("//input[@id='password']").Click
                 ' Invia la variabile contenente la Pw.

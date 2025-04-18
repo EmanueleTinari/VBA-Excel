@@ -17,7 +17,7 @@ Dim intI                        As Integer
 
     strSerieModuli = strSerieModuli & "modFunEsisteFoglio,"
     strSerieModuli = strSerieModuli & "modFunEsisteModulo,"
-    strSerieModuli = strSerieModuli & "modFunMesgBox,"
+    strSerieModuli = strSerieModuli & "modFunMexBox,"
     strSerieModuli = strSerieModuli & "modFunScriviFileTemp,"
     strSerieModuli = strSerieModuli & "modFunSelezionaCartella,"
 

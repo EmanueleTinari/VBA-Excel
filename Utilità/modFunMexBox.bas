@@ -1,9 +1,9 @@
-Attribute VB_Name = "modFunMesgBox"
+Attribute VB_Name = "modFunMexBox"
 Option Explicit
 Option Private Module
 
-' x testare la Funzione MesgBox.
-Public Sub Prova_MesgBox()
+' x testare la Funzione MexBox.
+Public Sub Prova_MexBox()
 
 Dim intRisposta                 As Integer
 Dim strMessaggio                As String
@@ -12,8 +12,8 @@ Dim strTitolo                   As String
     
     strMessaggio = "Testo messaggio"
     intSecondi = 3
-    strTitolo = "Titolo MessageBox Temporalizzata"
-    intRisposta = MesgBox(strMessaggio, intSecondi, strTitolo, 0 + 48)
+    strTitolo = "Titolo MessageBox Temporizzata"
+    intRisposta = MexBox(strMessaggio, intSecondi, strTitolo, 0 + 48)
     ' Stampa nella Finestra Immediata la risposta data dall'Utente.
     Debug.Print "L'Utente ha premuto " & intRisposta
 
@@ -21,10 +21,10 @@ End Sub
 
 '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 '+                                                                                                +
-'+ Nome :                    Function MesgBox _                                                   +
+'+ Nome :                    Function MexBox _                                                    +
 '+                                   (ByVal strTestoMsg As String, _                              +
 '+                                    Optional ByVal intTempoInSecondi As Integer, _              +
-'+                                    Optional ByVal strTitoloMesgBox As String = "WScript", _    +
+'+                                    Optional ByVal strTitoloMexBox As String = "WScript", _     +
 '+                                    Optional ByVal intButtons) As Integer                       +
 '+                                                                                                +
 '+ Creata da :               Emanuele Tinari                                                      +
@@ -35,7 +35,7 @@ End Sub
 '+                           in un tempo indicato in secondi nella Var intTempoInSecondi.         +
 '+                                                                                                +
 '+ Uso :                     Nel codice, quando è necessario avere una MessageBox a chiusura      +
-'+                           temporalizzata.                                                      +
+'+                           temporizzata.                                                        +
 '+                                                                                                +
 '+                           Tipi di bottoni:                                                     +
 '+                           0  (Bottone OK)                                                      +
@@ -60,14 +60,14 @@ End Sub
 '+                            6 : L'Utente ha premuto Si                                          +
 '+                            7 : L'Utente ha premuto No                                          +
 '+                                                                                                +
-'+ Esempio :                 ' x testare la Funzione MesgBox.                                     +
-'+                           Sub ProvaMesgBox()                                                   +
+'+ Esempio :                 ' x testare la Funzione MexBox.                                      +
+'+                           Sub ProvaMexBox()                                                    +
 '+                           Dim intRisposta As Integer                                           +
-'+                               intRisposta = MesgBox("Messaggio", 3, "Titolo", 0 + 48)          +
+'+                               intRisposta = MexBox("Messaggio", 3, "Titolo", 0 + 48)           +
 '+                               Debug.Print "L'Utente ha premuto " & intRisposta                 +
 '+                           End Sub                                                              +
 '+                                                                                                +
-'+ Valore di default :       - Se l'Argomento strTitoloMesgBox non viene passato, si assume       +
+'+ Valore di default :       - Se l'Argomento strTitoloMexBox non viene passato, si assume        +
 '+                             "WScript"                                                          +
 '+                                                                                                +
 '+ Argomento(i) :            - ByVal strTestoMsg As String                                        +
@@ -77,7 +77,7 @@ End Sub
 '+                             Il tempo, espresso in secondi, per il quale la MessageBox rimarrà  +
 '+                             visibile, dopo il quale si richiuderà, restituendo -1.             +
 '+                                                                                                +
-'+                           - Optional strTitoloMesgBox As String = "WScript"                    +
+'+                           - Optional strTitoloMexBox As String = "WScript"                     +
 '+                             Il titolo da dare alla MessageBox temporizzata.                    +
 '+                                                                                                +
 '+                           - Optional ByVal intButtons = vbDefaultButton1                       +
@@ -86,35 +86,35 @@ End Sub
 '+                             un valore diverso. Vedi più sopra il Valore restituito.            +
 '+                                                                                                +
 '+ Riferimento(i):           - Riferimento a Windows Script Host Object Model                     +
-'+                             Lib.: in "C:\Windows\SysWOW64\wshom.ocx"                           +
+'+                             Lib.: in "C:\Windows\SysWOW64\WSHom.ocx"                           +
 '+                             GUID: "{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}"                     +
 '+                                                                                                +
 '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Public Function MesgBox _
+Public Function MexBox _
                 (ByVal strTestoMsg As String, _
                 Optional ByVal intTempoInSecondi As Integer, _
-                Optional ByVal strTitoloMesgBox As String = "WScript", _
+                Optional ByVal strTitoloMexBox As String = "WScript", _
                 Optional ByVal intButtons As Integer) As Integer
 
 ' Gestione errore.
 On Error GoTo GesErr
 
-' Early Biding Windows Script, richiede il Riferimento a Windows Script Host Object Model (wshom.ocx).
+' Early Biding Windows Script, richiede il Riferimento a Windows Script Host Object Model (WSHom.ocx).
 Dim objFoglioHShell                 As New WshShell
     
-    ' La Funzione MesgBox è una MessageBox dell'oggetto WScript personalizzabile.
-    MesgBox = objFoglioHShell.PopUp(strTestoMsg, intTempoInSecondi, strTitoloMesgBox, intButtons)
+    ' La Funzione MexBox è una MessageBox dell'oggetto WScript personalizzabile.
+    MexBox = objFoglioHShell.PopUp(strTestoMsg, intTempoInSecondi, strTitoloMexBox, intButtons)
 
 ' Esce dalla Funzione, dopo aver svuotato la/e variabile/i.
 Uscita: Set objFoglioHShell = Nothing
         strTestoMsg = Empty
         intTempoInSecondi = Empty
-        strTitoloMesgBox = Empty
+        strTitoloMexBox = Empty
         intButtons = Empty
         Exit Function
 ' Questa riga di uscita viene raggiunta in caso di errore.
-GesErr: MsgBox "Errore nella Function" & vbCrLf & "'MesgBox'" & vbCrLf & vbCrLf & "Errore Numero: " & Err.Number & vbCrLf & "Descrizione dell'errore:" & vbCrLf & Err.Description, vbCritical, "C'è stato un errore!"
+GesErr: MsgBox "Errore nella Function" & vbCrLf & "'MexBox'" & vbCrLf & vbCrLf & "Errore Numero: " & Err.Number & vbCrLf & "Descrizione dell'errore:" & vbCrLf & Err.Description, vbCritical, "C'è stato un errore!"
         Resume Uscita
 ' Fine della Funzione.
 End Function

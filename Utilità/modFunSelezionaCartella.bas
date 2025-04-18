@@ -59,7 +59,7 @@ End Sub
 '+                             GUID: "{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}"                     +
 '+                                                                                                +
 '+                           - Riferimento a Windows Script Host Object Model                     +
-'+                             Lib.: in "C:\Windows\SysWOW64\wshom.ocx"                           +
+'+                             Lib.: in "C:\Windows\SysWOW64\WSHom.ocx"                           +
 '+                             GUID: "{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}"                     +
 '+                                                                                                +
 '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -71,7 +71,7 @@ On Error GoTo GesErr
 
 ' Richiede il Riferimento a Microsoft Office Object Library (MSO.dll).
 Dim OFd                         As Office.FileDialog
-' Early Biding Windows Script, richiede il Riferimento a Windows Script Host Object Model (wshom.ocx).
+' Early Biding Windows Script, richiede il Riferimento a Windows Script Host Object Model (WSHom.ocx).
 Dim objFoglioHShell             As New WshShell
 ' La variabile conterrà il percorso alla Cartella Documenti.
 Dim strPercorsoDocs             As String

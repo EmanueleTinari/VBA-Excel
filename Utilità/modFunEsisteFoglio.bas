@@ -9,7 +9,7 @@ Dim wbk As Workbook
 Dim strNomeFoglio As String
 Dim bolRisp As Boolean
     
-    Set wbk = Application.Workbooks("Qui il nome del File di Excel: *.xlsx, *.xlmx, *.xlsb...")
+    Set wbk = Application.Workbooks("Qui il nome del File di Excel: *.xlsx, *.xlsm, *.xlsb...")
     
     strNomeFoglio = "Qui il Nome del Foglio da testare se esiste"
     bolRisp = EsisteFoglio(wbk, strNomeFoglio)

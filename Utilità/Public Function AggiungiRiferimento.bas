@@ -21,7 +21,7 @@ Public Function AggiungiRiferimento(ByVal wbk As Workbook, ByVal strGUID As Stri
 ' Gestione errore.
 On Error GoTo GesErr
 
-    ' Se il controllo tramite la Funzione EsisteRiferimento è FALSO (il riferiemento non esiste nel progetto), allora.
+    ' Se il controllo tramite la Funzione EsisteRiferimento è FALSO (il riferimento non esiste nel progetto), allora.
     If EsisteRiferimento(wbk, strGUID) = False Then
         ' Aggiunge il riferimento al file tramite la GUID passata. ", 0, 0" Seleziona l'ultima versione installata sul computer.
         wbk.VBProject.References.AddFromGuid strGUID, 0, 0

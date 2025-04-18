@@ -4,7 +4,7 @@ Option Explicit
 '+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 '+                                                                             +
 '+ Funzione per aprire una finestra di dialogo e selezionare                   +
-'+ un file il cui percorso commpleto è il risultato della Funzione.            +
+'+ un file il cui percorso completo è il risultato della Funzione.            +
 '+ Per funzionare necessita un riferimento a Microsoft Office 11.0 Object      +
 '+ Library o versione successiva.                                              +
 '+                                                                             +

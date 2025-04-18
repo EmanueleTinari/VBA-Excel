@@ -74,7 +74,7 @@ Dim intNumFile                  As Integer
     ' Se la Var passata alla Funzione, contenente il nome del file, è vuota, allora.
     If strNomeFile = "" Then
         ' Crea il nome del file. L'estensione se non è passata dalla Var, viene usata quella di default.
-        strNomeFile = Format(Date, "ddmmmyyyy") & "_" & Format(Time, "hhmmss") & "." & strEstensione
+        strNomeFile = Format(Date, "dd-mmm-yyyy") & "_" & Format(Time, "hhmmss") & "." & strEstensione
     End If
     ' Se la Var passata alla Funzione, contenente il percorso del file, è vuota, allora.
     If strPercorso = "" Then
@@ -84,7 +84,7 @@ Dim intNumFile                  As Integer
     ' Poi concatena le due stringe per ottenere il file.
     strPercorsoNomeFile = strPercorso & strNomeFile
     
-    ' Il numero del file temporareo è il prossimo numero disponibile.
+    ' Il numero del file temporaneo è il prossimo numero disponibile.
     intNumFile = FreeFile()
     Open strPercorsoNomeFile For Output As intNumFile
     Print #intNumFile, strTesto;

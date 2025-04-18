@@ -19,7 +19,7 @@ End Sub
 '+                                                                                                +
 '+ Descrizione :             Sub che verifica se esiste una Cartella nel File System col percorso +
 '+                           indicato dalla stringa strPercorsoCartella. Se la Cartella non       +
-'+                           esiste, la crea; se è una sottoCartella e il percorso non esiste,    +
+'+                           esiste, la crea; se è una sotto-cartella e il percorso non esiste,    +
 '+                           crea anche quello.                                                   +
 '+                                                                                                +
 '+ Uso :                     Seguire l'esempio. Si può indicare o meno lo Slash finale nel        +
@@ -36,7 +36,7 @@ End Sub
 '+ Argomento(i) :            ByVal strPercorsoCartella As String                                  +
 '+                                                                                                +
 '+ Riferimento(i):           - Microsoft Scripting Runtime Library                                +
-'+                             Lib.: in "C:Windows\SysWOW64\scrrun.dll"                           +
+'+                             Lib.: in "C:Windows\SysWOW64\ScrRun.dll"                           +
 '+                             GUID: "{420B2830-E718-11CF-893D-00A0C9054228}"                     +
 '+                                                                                                +
 '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -56,7 +56,7 @@ Dim objFSO                      As New FileSystemObject
     End If
     ' Se non esiste il percorso fornito e la stringa strPercorsoCartella non è vuota, allora.
     If Not objFSO.FolderExists(strPercorsoCartella) And strPercorsoCartella <> "" Then
-        ' Crea la cartella o la sottocartella nel percorso fornito, comprensivo dello "\" finale.
+        ' Crea la cartella o la sotto-cartella nel percorso fornito, comprensivo dello "\" finale.
         VerificaCartella Left(strPercorsoCartella, InStrRev(strPercorsoCartella, "\", Len(strPercorsoCartella) - 1))
         ' Crea il percorso alla Cartella e la Cartella stessa.
         objFSO.CreateFolder strPercorsoCartella
